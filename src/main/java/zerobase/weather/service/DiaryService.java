@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import zerobase.weather.WeatherApplication;
 import zerobase.weather.domain.DateWeather;
 import zerobase.weather.domain.Diary;
+import zerobase.weather.error.InvalidDate;
 import zerobase.weather.repository.DateWeatherRepository;
 import zerobase.weather.repository.DiaryRepository;
 
@@ -81,17 +82,23 @@ public class DiaryService {
 
     private DateWeather getDateWeather(LocalDate date) {
         List<DateWeather> dateWeatherListFromDB = dateWeatherRepository.findAllByDate(date);
-        if (dateWeatherListFromDB.size() == 0) {
-            // 새로 API에서 날씨 정보 가져오기
-            return getWeatherFromApi();
-        } else {
+        if (dateWeatherListFromDB.size() > 0) {
+            logger.info("get dateWeather from db");
             return dateWeatherListFromDB.get(0);
+        } else {
+            // 과거 날씨의 날씨 가져오는게 유료여서 현재 날씨 가져옴
+            // 정책상으로 현재 날씨를 가져올 수도 있고, 날씨 없이 일기를 저장할 수도 있음
+            logger.info("get dateWeather from api");
+            return getWeatherFromApi();
         }
     }
 
     @Transactional(readOnly = true)
     public List<Diary> readDiary(LocalDate date) {
-        logger.debug("read diary");
+//        if (date.isAfter(LocalDate.ofYearDay(3050, 1))) {
+//            throw new InvalidDate();
+//        }
+
         return diaryRepository.findAllByDate(date);
     }
 
