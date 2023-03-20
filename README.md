@@ -1,5 +1,6 @@
 날씨 일기 프로젝트
- - 날짜와 일기 내용을 CRUD 할 수 있는 RESTful API를 구현한 주니어 백엔드 개발자입니다. OpenWeatherMap API를 사용하여 매일 자정에 서울의 현재 날씨 데이터를 수집하고 DB에 저장하는 기능도 구현하였습니다.
+ - 날짜와 일기 내용을 CRUD 할 수 있는 RESTful API를 구현
+ - OpenWeatherMap API를 사용하여 매일 자정에 서울의 현재 날씨 데이터를 수집하고 DB에 저장하는 기능 구현
 
 1. Swagger
  - API 문서: Swagger UI를 통해 볼 수 있습니다. http://localhost:8080/swagger-ui.html에 접속하면 사용 가능합니다.
