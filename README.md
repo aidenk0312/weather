@@ -17,15 +17,15 @@
  - OpenWeatherMap API로부터 날씨 데이터를 정상적으로 수집하고 DB에 저장하는 것을 확인
 
 ## 4. API 목록 및 상세 내용:
- - 일기 생성: 선택한 날짜와 일기 내용을 입력하여 DB에 일기를 저장
+ - [x] 일기 생성: 선택한 날짜와 일기 내용을 입력하여 DB에 일기를 저장
    (URL: /create/diary, Method: POST, Parameters: date, text)
- - 일기 조회: 선택한 날짜의 모든 일기 데이터를 가져오기
+ - [x] 일기 조회: 선택한 날짜의 모든 일기 데이터를 가져오기
    (URL: /read/diary, Method: GET, Parameters: date)
- - 기간별 일기 조회: 선택한 기간 중의 모든 일기 데이터를 가져오기
+ - [x] 기간별 일기 조회: 선택한 기간 중의 모든 일기 데이터를 가져오기
    (URL: /read/diaries, Method: GET, Parameters: startDate, endDate)
- - 일기 수정: 선택한 날짜의 일기 내용을 수정
+ - [x] 일기 수정: 선택한 날짜의 일기 내용을 수정
    (URL: /update/diary, Method: PUT, Parameters: date, text)
- - 일기 삭제: 선택한 날짜의 일기 데이터를 삭제
+ - [x] 일기 삭제: 선택한 날짜의 일기 데이터를 삭제
    (URL: /delete/diary, Method: DELETE, Parameters: date)
 
 ## 5. 구현 시 중요하게 고려한 부분
