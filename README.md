@@ -18,18 +18,21 @@
 
 ## 4. API 목록 및 상세 내용:
  - [x] 일기 생성: 선택한 날짜와 일기 내용을 입력하여 DB에 일기를 저장
+ 
    (URL: /create/diary, Method: POST, Parameters: date, text)
- - [x] 일기 조회: 선택한 날짜의 모든 일기 데이터를 가져오기
-   (URL: /read/diary, Method: GET, Parameters: date)
- - [x] 기간별 일기 조회: 선택한 기간 중의 모든 일기 데이터를 가져오기
-   (URL: /read/diaries, Method: GET, Parameters: startDate, endDate)
- - [x] 일기 수정: 선택한 날짜의 일기 내용을 수정
-   (URL: /update/diary, Method: PUT, Parameters: date, text)
- - [x] 일기 삭제: 선택한 날짜의 일기 데이터를 삭제
-   (URL: /delete/diary, Method: DELETE, Parameters: date)
 
-## 5. 구현 시 중요하게 고려한 부분
- - 예외 처리: 데이터 입력 시, 날짜 형식에 맞지 않는 입력에 대한 예외 처리를 하였습니다.
- - 데이터베이스 트랜잭션 관리: 일기 생성, 수정, 삭제 시 트랜잭션을 사용하여 데이터의 무결성을 보장하였습니다.
- - API 문서화: Swagger UI를 사용하여 API 문서를 작성하였습니다. 이를 통해 API를 더 쉽게 이해하고 사용할 수 있습니다.
- - 날씨 데이터 수집 최적화: 매일 자정에 날씨 데이터를 수집하여 DB에 저장하는 작업을 스케쥴링하였습니다. 이를 통해 과도한 API 요청을 줄이고, 사용자가 최신 날씨 정보를 얻을 수 있게 하였습니다.
+ - [x] 일기 조회: 선택한 날짜의 모든 일기 데이터를 가져오기
+ 
+   (URL: /read/diary, Method: GET, Parameters: date)
+   
+ - [x] 기간별 일기 조회: 선택한 기간 중의 모든 일기 데이터를 가져오기
+ 
+   (URL: /read/diaries, Method: GET, Parameters: startDate, endDate)
+   
+ - [x] 일기 수정: 선택한 날짜의 일기 내용을 수정
+ 
+   (URL: /update/diary, Method: PUT, Parameters: date, text)
+   
+ - [x] 일기 삭제: 선택한 날짜의 일기 데이터를 삭제
+ 
+   (URL: /delete/diary, Method: DELETE, Parameters: date)
