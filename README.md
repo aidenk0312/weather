@@ -12,11 +12,7 @@
  - 날씨 데이터를 수집하기 위해 OpenWeatherMap API를 사용
  - 데이터의 동시성을 보장하기 위해 트랜잭션 처리를 적용
 
-## 3. 검증 결과
- - API 테스트를 통해 일기와 날씨 데이터의 생성, 조회, 수정, 삭제 기능이 정상적으로 동작함을 확인
- - OpenWeatherMap API로부터 날씨 데이터를 정상적으로 수집하고 DB에 저장하는 것을 확인
-
-## 4. API 목록 및 상세 내용:
+## 3. API 목록 및 상세 내용:
  - [x] 일기 생성: 선택한 날짜와 일기 내용을 입력하여 DB에 일기를 저장
  
    (URL: /create/diary, Method: POST, Parameters: date, text)
